@@ -1,5 +1,5 @@
 
-##**DDL Script: Bronze Layer Table Definitions**
+## **DDL Script: Bronze Layer Table Definitions**
 
 ------------------------------------------------------------------------------
 Description:
