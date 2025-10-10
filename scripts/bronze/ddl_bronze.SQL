@@ -1,15 +1,14 @@
-/*
-===============================================================================
-DDL Script: Bronze Layer Table Definitions
-===============================================================================
+
+*DDL Script: Bronze Layer Table Definitions*
+
+------------------------------------------------------------------------------
 Description:
     This script defines the DDL structure for all tables in the 'bronze' schema.
     Existing tables will be dropped and recreated to ensure schema consistency.
     
     Execute this script whenever the Bronze layer table structures need to be
     redefined or refreshed.
-===============================================================================
-*/
+------------------------------------------------------------------------------
 
 IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
     DROP TABLE bronze.crm_cust_info;
