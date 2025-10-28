@@ -23,7 +23,7 @@ The project implements the **Medallion Architecture**, structured as follows:
 ### ⚙️ Tech Stack
 
 - **Database:** SQL Server / SQL Server Express  
-- **Tools:** SSMS, Draw.io, Notion, Git  
+- **Tools:** SSMS, Notion, Git  
 - **Languages:** T-SQL (DDL, DML, and ETL scripts)  
 - **Architecture:** Medallion (Bronze → Silver → Gold)
 
@@ -33,16 +33,11 @@ The project implements the **Medallion Architecture**, structured as follows:
 
 data-warehouse-project/
 │
-├── datasets/ # Source CSV files (ERP & CRM)
-├── docs/ # Project documentation and diagrams
-├── scripts/ # ETL scripts for Bronze, Silver, and Gold layers
-├── tests/ # Validation and quality checks
-└── README.md # Project overview and documentation
-
-yaml
-Copiar código
-
----
+├── datasets/ # Source CSV files (ERP & CRM)
+├── docs/ # Project documentation and diagrams
+├── scripts/ # ETL scripts for Bronze, Silver, and Gold layers
+├── tests/ # Validation and quality checks
+└── README.md # Project overview and documentation
 
 ### 📈 Key Objectives
 
