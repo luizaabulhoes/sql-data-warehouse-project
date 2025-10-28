@@ -30,14 +30,15 @@ The project implements the **Medallion Architecture**, structured as follows:
 ---
 
 ### 📁 Repository Structure
-
+<pre>
 data-warehouse-project/
 │
-├── datasets/ # Source CSV files (ERP & CRM)
-├── docs/ # Project documentation and diagrams
-├── scripts/ # ETL scripts for Bronze, Silver, and Gold layers
-├── tests/ # Validation and quality checks
-└── README.md # Project overview and documentation
+├── datasets/           # Source CSV files (ERP & CRM)
+├── docs/               # Project documentation and diagrams
+├── scripts/            # ETL scripts for Bronze, Silver, and Gold layers
+├── tests/              # Validation and quality checks
+└── README.md           # Project overview and documentation
+</pre>
 
 ### 📈 Key Objectives
 
