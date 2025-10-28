@@ -1,4 +1,5 @@
 
+/*
 ---------------------------------------------------------------------------------
 Stored Procedure: bronze.load_bronze
 ---------------------------------------------------------------------------------
@@ -21,7 +22,8 @@ Notes:
     - Execution requires proper permissions on the bronze schema and file paths.
     - Track start and end times to monitor load duration if necessary.
 ---------------------------------------------------------------------------------
-  
+*/
+
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 
     BEGIN 
