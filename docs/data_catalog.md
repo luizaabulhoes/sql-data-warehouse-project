@@ -1,57 +1,79 @@
-🟨 Gold Layer — Data Catalog
-Overview
+# 🟨 Gold Layer — Data Catalog Overview  
 
-The Gold Layer is the business-level data model, designed to power dashboards, analytics, and reporting.
-It consists of dimension tables (descriptive data) and fact tables (quantitative, event-based data).
+The **Gold Layer** is the **business-level data model**, designed to power **dashboards, analytics, and reporting**.  
+It consists of **dimension tables** (descriptive data) and **fact tables** (quantitative, event-based data).
 
-<details> <summary>🧍‍♂️ <b>gold.dim_customers</b> — Customer Dimension</summary>
+---
 
-Purpose:
+<details>
+<summary>🧍‍♂️ <b>gold.dim_customers</b> — Customer Dimension</summary>
+
+**Purpose:**  
 Stores customer details enriched with demographic and geographic information.
 
-Column Name	Data Type	Description
-customer_key	INT	Surrogate key uniquely identifying each customer record.
-customer_id	INT	Unique numerical identifier assigned to each customer.
-customer_number	NVARCHAR(50)	Alphanumeric identifier representing the customer, used for tracking and referencing.
-first_name	NVARCHAR(50)	Customer’s first name.
-last_name	NVARCHAR(50)	Customer’s last or family name.
-country	NVARCHAR(50)	Country of residence (e.g., Australia).
-marital_status	NVARCHAR(50)	Marital status (e.g., Married, Single).
-gender	NVARCHAR(50)	Gender of the customer (Male, Female, n/a).
-birthdate	DATE	Date of birth (YYYY-MM-DD, e.g., 1971-10-06).
-create_date	DATE	Date when the record was created in the system.
-</details>
-<details> <summary>🧩 <b>gold.dim_products</b> — Product Dimension</summary>
+<table>
+  <tr><th>Column Name</th><th>Data Type</th><th>Description</th></tr>
+  <tr><td>customer_key</td><td>INT</td><td>Surrogate key uniquely identifying each customer record.</td></tr>
+  <tr><td>customer_id</td><td>INT</td><td>Unique numerical identifier assigned to each customer.</td></tr>
+  <tr><td>customer_number</td><td>NVARCHAR(50)</td><td>Alphanumeric identifier representing the customer, used for tracking and referencing.</td></tr>
+  <tr><td>first_name</td><td>NVARCHAR(50)</td><td>Customer’s first name.</td></tr>
+  <tr><td>last_name</td><td>NVARCHAR(50)</td><td>Customer’s last or family name.</td></tr>
+  <tr><td>country</td><td>NVARCHAR(50)</td><td>Country of residence (e.g., Australia).</td></tr>
+  <tr><td>marital_status</td><td>NVARCHAR(50)</td><td>Marital status (e.g., Married, Single).</td></tr>
+  <tr><td>gender</td><td>NVARCHAR(50)</td><td>Gender (Male, Female, n/a).</td></tr>
+  <tr><td>birthdate</td><td>DATE</td><td>Date of birth (YYYY-MM-DD, e.g., 1971-10-06).</td></tr>
+  <tr><td>create_date</td><td>DATE</td><td>Date when the record was created in the system.</td></tr>
+</table>
 
-Purpose:
+</details>
+
+---
+
+<details>
+<summary>🧩 <b>gold.dim_products</b> — Product Dimension</summary>
+
+**Purpose:**  
 Provides information about the products and their related attributes.
 
-Column Name	Data Type	Description
-product_key	INT	Surrogate key uniquely identifying each product record.
-product_id	INT	Unique identifier assigned to the product for internal tracking.
-product_number	NVARCHAR(50)	Structured alphanumeric code representing the product.
-product_name	NVARCHAR(50)	Descriptive product name (e.g., includes type, color, size).
-category_id	NVARCHAR(50)	Identifier for the product’s category.
-category	NVARCHAR(50)	Broad classification (e.g., Bikes, Components).
-subcategory	NVARCHAR(50)	Detailed classification within the category.
-maintenance_required	NVARCHAR(50)	Indicates if maintenance is required (Yes / No).
-cost	INT	Base cost of the product.
-product_line	NVARCHAR(50)	Product line or series (e.g., Road, Mountain).
-start_date	DATE	Date when the product became available.
-</details>
-<details> <summary>💰 <b>gold.fact_sales</b> — Sales Fact Table</summary>
+<table>
+  <tr><th>Column Name</th><th>Data Type</th><th>Description</th></tr>
+  <tr><td>product_key</td><td>INT</td><td>Surrogate key uniquely identifying each product record.</td></tr>
+  <tr><td>product_id</td><td>INT</td><td>Unique identifier assigned to the product for internal tracking and referencing.</td></tr>
+  <tr><td>product_number</td><td>NVARCHAR(50)</td><td>Structured alphanumeric code representing the product.</td></tr>
+  <tr><td>product_name</td><td>NVARCHAR(50)</td><td>Descriptive product name (e.g., includes type, color, size).</td></tr>
+  <tr><td>category_id</td><td>NVARCHAR(50)</td><td>Unique identifier for the product's category.</td></tr>
+  <tr><td>category</td><td>NVARCHAR(50)</td><td>Broader classification (e.g., Bikes, Components).</td></tr>
+  <tr><td>subcategory</td><td>NVARCHAR(50)</td><td>Detailed classification within the category.</td></tr>
+  <tr><td>maintenance_required</td><td>NVARCHAR(50)</td><td>Indicates if the product requires maintenance (Yes/No).</td></tr>
+  <tr><td>cost</td><td>INT</td><td>Base cost or price of the product.</td></tr>
+  <tr><td>product_line</td><td>NVARCHAR(50)</td><td>Product line or series (e.g., Road, Mountain).</td></tr>
+  <tr><td>start_date</td><td>DATE</td><td>Date when the product became available for sale.</td></tr>
+</table>
 
-Purpose:
+</details>
+
+---
+
+<details>
+<summary>💰 <b>gold.fact_sales</b> — Sales Fact Table</summary>
+
+**Purpose:**  
 Stores transactional sales data for analytical use.
 
-Column Name	Data Type	Description
-order_number	NVARCHAR(50)	Unique alphanumeric identifier for each sales order (e.g., SO54496).
-product_key	INT	Surrogate key linking to the product dimension.
-customer_key	INT	Surrogate key linking to the customer dimension.
-order_date	DATE	Date when the order was placed.
-shipping_date	DATE	Date when the order was shipped.
-due_date	DATE	Payment due date.
-sales_amount	INT	Total value of the sale (e.g., 25).
-quantity	INT	Number of units sold in the order line.
-price	INT	Unit price of the product (e.g., 25).
+<table>
+  <tr><th>Column Name</th><th>Data Type</th><th>Description</th></tr>
+  <tr><td>order_number</td><td>NVARCHAR(50)</td><td>Unique alphanumeric identifier for each sales order (e.g., SO54496).</td></tr>
+  <tr><td>product_key</td><td>INT</td><td>Surrogate key linking to the product dimension.</td></tr>
+  <tr><td>customer_key</td><td>INT</td><td>Surrogate key linking to the customer dimension.</td></tr>
+  <tr><td>order_date</td><td>DATE</td><td>Date when the order was placed.</td></tr>
+  <tr><td>shipping_date</td><td>DATE</td><td>Date when the order was shipped to the customer.</td></tr>
+  <tr><td>due_date</td><td>DATE</td><td>Date when the payment was due.</td></tr>
+  <tr><td>sales_amount</td><td>INT</td><td>Total monetary value of the sale (e.g., 25).</td></tr>
+  <tr><td>quantity</td><td>INT</td><td>Number of units ordered in the line item.</td></tr>
+  <tr><td>price</td><td>INT</td><td>Unit price of the product (e.g., 25).</td></tr>
+</table>
+
 </details>
+
+---
+
