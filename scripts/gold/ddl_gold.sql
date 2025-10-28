@@ -1,22 +1,31 @@
 /*
-===============================================================================
+---------------------------------------------------------------------------------
 DDL Script: Create Gold Views
-===============================================================================
-Script Purpose:
-    This script creates views for the Gold layer in the data warehouse. 
-    The Gold layer represents the final dimension and fact tables (Star Schema)
+---------------------------------------------------------------------------------
 
-    Each view performs transformations and combines data from the Silver layer 
-    to produce a clean, enriched, and business-ready dataset.
+Purpose:
+    Defines and creates all analytical views in the 'gold' layer of the 
+    data warehouse. The 'gold' layer represents the final business-ready 
+    dimension and fact structures (Star Schema).
+
+Description:
+    Each view combines and transforms data from the 'silver' layer to 
+    deliver clean, enriched, and analytics-ready datasets optimized for 
+    reporting and decision-making.
 
 Usage:
-    - These views can be queried directly for analytics and reporting.
-===============================================================================
+    - Execute this script to (re)create the 'gold' layer views.
+    - These views can be queried directly for analytics and BI dashboards.
+
+---------------------------------------------------------------------------------
+
 */
 
 -- =============================================================================
 -- Create Dimension: gold.dim_customers
 -- =============================================================================
+
+-- Create Dimension: gold.dim_customers
 
 IF OBJECT_ID('gold.dim_customers', 'V') IS NOT NULL
     DROP VIEW gold.dim_customers;
