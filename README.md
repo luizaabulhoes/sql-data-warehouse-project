@@ -5,7 +5,7 @@
 This project demonstrates the development of a modern **Data Warehouse** and **Analytics solution** using SQL Server.
 It follows the **Medallion Architecture** (Bronze, Silver, Gold layers) to showcase data ingestion, transformation, and modeling for analytical insights.
 
-> 🧩 *This project was developed based on the free course “SQL Data Warehouse Project” by Data with Baraa (https://github.com/DataWithBaraa/sql-data-warehouse-project?tab=readme-ov-file).
+> 🧩 *This project was developed based on the free course “SQL Data Warehouse Project” by [Data with Baraa] (https://github.com/DataWithBaraa/sql-data-warehouse-project?tab=readme-ov-file).
 > The original materials were used for educational purposes and adapted for portfolio presentation.*
 
 ---
@@ -74,7 +74,7 @@ data-warehouse-project/
 ### 📚 Credits
 
 This project is **based on the open educational materials** provided in the
-[SQL Data Warehouse Project]: (https://github.com/DataWithBaraa/sql-data-warehouse-project?tab=readme-ov-file) course by the original creator.
+[SQL Data Warehouse Project] (https://github.com/DataWithBaraa/sql-data-warehouse-project?tab=readme-ov-file) course by the original creator.
 All rights and original resources belong to the respective author.
 This version was created for **portfolio and educational demonstration**.
 
