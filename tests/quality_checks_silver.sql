@@ -23,8 +23,8 @@ Usage Notes:
 -- Check for NULLs or Duplicates in Primary Key
 -- Expectation: No Results
 SELECT 
-    cst_id,
-    COUNT(*) 
+    cst_id
+    ,COUNT(*) 
 FROM silver.crm_cust_info
 GROUP BY cst_id
 HAVING COUNT(*) > 1 OR cst_id IS NULL;
@@ -47,8 +47,8 @@ FROM silver.crm_cust_info;
 -- Check for NULLs or Duplicates in Primary Key
 -- Expectation: No Results
 SELECT 
-    prd_id,
-    COUNT(*) 
+    prd_id
+    ,COUNT(*) 
 FROM silver.crm_prd_info
 GROUP BY prd_id
 HAVING COUNT(*) > 1 OR prd_id IS NULL;
@@ -103,9 +103,9 @@ WHERE sls_order_dt > sls_ship_dt
 -- Check Data Consistency: Sales = Quantity * Price
 -- Expectation: No Results
 SELECT DISTINCT 
-    sls_sales,
-    sls_quantity,
-    sls_price 
+    sls_sales
+    ,sls_quantity
+    ,sls_price 
 FROM silver.crm_sales_details
 WHERE sls_sales != sls_quantity * sls_price
    OR sls_sales IS NULL 
